@@ -92,5 +92,6 @@ class LoginController extends Controller
     protected function redirectPath()
     {
         return config('multiauth.redirect_after_login');
+       
     }
 }

@@ -1,17 +1,17 @@
-@extends('multiauth::layouts.app') 
+@extends('vendor.multiauth.admin.layouts.app') 
 @section('content')
-<div class="hold-transition login-page" style="height:100%;">
-<div class="container">
+<div class="hold-transition login-page" >
+<div class="container" style="height:100%;">
     <div class="row justify-content-center">
         <div class="col-md-12">
                 <div class="login-box">
                         <div class="login-logo">
-                          <a href="../../index2.html"><b>Admin</b>LTE</a>
+                          <a href="../../index2.html"><b>OBSS</b></a>
                         </div>
                         <!-- /.login-logo -->
                         <div class="login-box-body">
-                          <p class="login-box-msg">Sign in to start your session</p>
-                          <div class="">{{ ucfirst(config('multiauth.prefix')) }} Login</div>
+                          <p class="login-box-msg" style="font-size:16px;">{{ ucfirst(config('multiauth.prefix')) }} Login</p>
+                       
                           <form method="POST" action="{{ route('admin.login') }}" aria-label="{{ __('Admin Login') }}">
                                 @csrf
                             <div class="form-group has-feedback">
@@ -24,7 +24,7 @@
                               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             <div class="form-group has-feedback">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                              <label for="password" class="">{{ __('Password') }}</label>
                               <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
                               required> @if ($errors->has('password'))
                           <span class="invalid-feedback" role="alert">
@@ -57,8 +57,7 @@
                           </div>
                           <!-- /.social-auth-links -->
                       
-                          <a href="#">I forgot my password</a><br>
-                          <a href="register.html" class="text-center">Register a new membership</a>
+                         
                       
                         </div>
                     </div>

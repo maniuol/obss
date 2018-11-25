@@ -234,10 +234,10 @@
                   <li class="user-body">
                     <div class="row">
                       <div class="col-xs-4 text-center">
-                        <a href="#">Followers</a>
+                          <a href="{{ route('admin.show') }}" class="dropdown-item">Admin</a>
                       </div>
                       <div class="col-xs-4 text-center">
-                        <a href="#">Sales</a>
+                        <a class="dropdown-item" href="{{ route('admin.roles') }}">Roles</a>
                       </div>
                       <div class="col-xs-4 text-center">
                         <a href="#">Friends</a>
@@ -248,7 +248,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="{{route('admin.profile')}}" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       

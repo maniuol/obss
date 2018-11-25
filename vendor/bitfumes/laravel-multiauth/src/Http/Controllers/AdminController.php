@@ -4,6 +4,8 @@ namespace Bitfumes\Multiauth\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Bitfumes\Multiauth\Model\Admin;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -28,5 +30,23 @@ class AdminController extends Controller
         $admins = Admin::where('id', '!=', 1)->get();
 
         return view('multiauth::admin.show', compact('admins'));
+    }
+
+    public function profile()
+    {
+         // $admin=Auth::user()->name;
+         //var_dump($admin);exit;
+        
+        //return view('multiauth::admin.profile',compact('admin'));
+         return view('multiauth::admin.profile')->with('name', Auth::user()->name)
+                                                ->with('email', Auth::user()->email)
+                                                ->with('password', Auth::user()->password);
+    }
+
+     //admin profile update
+
+    public function admin_profile($id)
+    {
+       return $id;
     }
 }

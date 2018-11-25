@@ -41,4 +41,10 @@ Route::group([
     Route::get('/{any}', function () {
         return abort(404);
     });
+
+    //custom routes
+    // admin profile show 
+    Route::get('admin/profile', 'AdminController@profile')->name('admin.profile');
+    //admin update route
+    Route::post('admin/profile/update', 'AdminController@admin_profile')->name('admin.profile.update');
 });
