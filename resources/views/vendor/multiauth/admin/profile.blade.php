@@ -307,7 +307,7 @@
                       <!-- /.tab-pane -->
         
                       <div class="tab-pane" id="settings">
-                      <form  action="{{route('admin.profile.update',1)}}" class="form-horizontal" method="post">
+                      <form  action="{{route('profile.update')}}" class="form-horizontal" method="post">
                         {{csrf_field()}}
                           <div class="form-group">
                             <label for="inputName"  class="col-sm-2 control-label">Name</label>

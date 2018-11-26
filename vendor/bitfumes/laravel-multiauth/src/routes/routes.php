@@ -46,5 +46,5 @@ Route::group([
     // admin profile show 
     Route::get('admin/profile', 'AdminController@profile')->name('admin.profile');
     //admin update route
-    Route::post('admin/profile/update', 'AdminController@admin_profile')->name('admin.profile.update');
+    Route::post('profile/update', 'AdminController@admin_profile')->name('profile.update');
 });

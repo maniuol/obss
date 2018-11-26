@@ -6,6 +6,7 @@ use Illuminate\Routing\Controller;
 use Bitfumes\Multiauth\Model\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Bitfumes\Multiauth\Http\Requests\AdminRequest;
 
 class AdminController extends Controller
 {
@@ -45,8 +46,8 @@ class AdminController extends Controller
 
      //admin profile update
 
-    public function admin_profile($id)
+    public function admin_profile(AdminRequest $request,$id)
     {
-       return $id;
+       echo "yes";
     }
 }

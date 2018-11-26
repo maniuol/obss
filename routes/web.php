@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('vendor.admin.index');
-});
+Route::get('/', 'HomeController@index');
+Route::get('register','RegisterController@index');
 
 Auth::routes();
 
