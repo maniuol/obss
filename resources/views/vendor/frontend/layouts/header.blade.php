@@ -5,12 +5,36 @@
         <div class="container">
             <div class="header-top-inner">
                 <div class="cnt-account">
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled list-inline">
+                        @guest
+
+                            <li><a href="{{url('register/user')}}"><i class="icon fa fa-lock"></i>Login|Signup</a></li>
+                        @else
                         <li><a href="#"><i class="icon fa fa-user"></i>My Account</a></li>
                         <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
                         <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                         <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
-                    <li><a href=""><i class="icon fa fa-lock"></i>Login|Signup</a></li>
+                        <li class="dropdown dropdown-small"">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+                                    <a class="dropdown-item" style="color:black !important;" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+
+                           
+                           
+                        @endguest
                     </ul>
                 </div><!-- /.cnt-account -->
     

@@ -47,4 +47,9 @@ Route::group([
     Route::get('admin/profile', 'AdminController@profile')->name('admin.profile');
     //admin update route
     Route::post('profile/update', 'AdminController@admin_profile')->name('profile.update');
+    //display admin products
+
+   // Route::get('product', 'AdminController@profile')->name('admin.profile');
+ 
+
 });

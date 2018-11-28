@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('register','RegisterController@index');
+Route::get('register/user','frontend\RegisterController@index')->name('register');
 
 Auth::routes();
 
