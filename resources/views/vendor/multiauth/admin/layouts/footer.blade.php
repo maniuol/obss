@@ -2,6 +2,7 @@
 
 <!-- jQuery 3 -->
 <script src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
@@ -21,5 +22,34 @@
 <script src="{{asset('assets/dist/js/pages/dashboard2.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('assets/dist/js/demo.js')}}"></script>
+
+@yield('js')
+
+
+<!-- <script>
+        $(document).ready(function(){
+       
+            
+         $(function() {
+               $('#table').DataTable({
+               processing: true,
+               serverSide: true,
+               ajax: '{{ url('products/show') }}',
+               columns: [
+                        { data: 'id', name: 'id' },
+                        { data: 'title', name: 'title' },
+                        { data: 'description', name: 'description' }
+                     ]
+            });
+         });
+        });
+         </script> -->
+       
+      
+       
+        
+  
+
+
 </body>
 </html>

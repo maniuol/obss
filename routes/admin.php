@@ -2,7 +2,7 @@
 
 Route::group([
     'namespace'  => 'Bitfumes\Multiauth\Http\Controllers',
-    'middleware' => ['auth', 'prevent-back-history'],
+    'middleware' => ['web', 'prevent-back-history'],
     'prefix'     => config('multiauth.prefix', 'admin'),
 ], function () {
     Route::GET('/home', 'AdminController@index')->name('admin.home');
@@ -38,13 +38,54 @@ Route::group([
     Route::delete('/role/{role}', 'RoleController@destroy')->name('admin.role.delete');
     Route::get('/role/{role}/edit', 'RoleController@edit')->name('admin.role.edit');
     Route::patch('/role/{role}', 'RoleController@update')->name('admin.role.update');
-    Route::get('/{any}', function () {
-        return abort(404);
-    });
 
     //custom routes
-    // admin profile show 
-    Route::get('admin/profile', 'AdminController@profile')->name('admin.profile');
-    //admin update route
+    //profile show
+    Route::get('/profile', 'AdminController@profile')->name('admin.profile');
+
+    //profile update
     Route::post('profile/update', 'AdminController@admin_profile')->name('profile.update');
+
+    //prodicts show
+
+    Route::get('/products', 'AdminController@products')->name('admin.products');
+
+    Route::get('products/show', 'AdminController@products_show')->name('admin.products.show');
+
+    //single product show
+
+
+
+    Route::get('single/product/{id}', 'AdminController@singleproduct')->name('singleproduct'); 
+   //delete product
+    Route::post('product/delete', 'AdminController@deleteproduct')->name('product.delete'); 
+   
+   // add product
+     Route::get('product/add', 'AdminController@product_form')->name('add.products');
+
+
+      Route::post('product/add', 'AdminController@add_products')->name('admin.add.products');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     Route::get('/{any}', function () {
+         return abort(404);
+     });
+
+
+    
+
+    
 });

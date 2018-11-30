@@ -1,4 +1,4 @@
-@extends('vendor.layouts.app')
+@extends('vendor.multiauth.admin.layouts.app')
 
 @section('content')
 

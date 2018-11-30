@@ -88,7 +88,7 @@
                     </div>
                 </nav> --}}
        
-            @include('vendor.multiauth.admin.layouts.header') <!--include header file-->
+           
 
             <main class="py-4">
                 @yield('content')

@@ -1,4 +1,4 @@
-@extends('vendor.multiauth.admin.layouts.app') 
+@extends('vendor.layouts.app') 
 @section('content')
 <div class="hold-transition login-page" >
 <div class="container" style="height:100%;">
